@@ -5,7 +5,7 @@ import java.util.Calendar;
 
 rule "checkAge"
     when
-        $p:Person(age != getBirthday(birthday));
+        $p:Person(age != getAgeByBirthday(birthday));
     then
         System.out.println($p.getName() + "的年龄错误。");
         $p.setAge(getAgeByBirthday($p.getBirthday()));
